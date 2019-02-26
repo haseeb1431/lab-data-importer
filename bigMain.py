@@ -99,6 +99,7 @@ def process_summary(results):
 
 
 def getQueryTerm(author=None):
+    """Generate query string which we will send to the API"""
     # goes five year back from today
     query = '("{0}/{1}/{2}"[PDat]: "{3}/{1}/{2}"[PDat])'.format(datetime.today().year - 5,
                                                                 datetime.today().month,
@@ -116,11 +117,14 @@ if __name__ == '__main__':
     authors = ['Stein Ulrike', 'Almut Nebel']
 
     for author in authors:
+        # get the query for the API
         query = getQueryTerm(author)
+        # call the search method and process the results
         search_results = search(query)
-        # get the paper ids and loop over it
+        # get the paper ids for the researcher and loop over it
         id_list = search_results['IdList']
         print("found {0} Ids for query : {1}".format(len(id_list), query))
+
         # fetch details of all the ids
         for publication_id in id_list:
             try:
@@ -136,7 +140,7 @@ if __name__ == '__main__':
                 print(ex)
 
         # sleep it for a second to avoid the API limit
-        sleep(1)
+        sleep(5)
 
     # Pretty print the first paper in full to observe its structure
     print(json.dumps(paper_summary, indent=2, separators=(',', ':')))

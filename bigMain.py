@@ -106,7 +106,7 @@ def getQueryTerm(author=None):
                                                                 datetime.today().day,
                                                                 datetime.today().year)
     if author is not None:
-        query += '{0} AND {1}[Author]'.format(query, author)
+        query = '{0} AND {1}[Author]'.format(query, author)
 
     return query
 
@@ -114,7 +114,8 @@ def getQueryTerm(author=None):
 if __name__ == '__main__':
     # Get all the papers from the author
     # we will use full name to avoid ambiguity among different authors
-    authors = ['Stein Ulrike', 'Almut Nebel']
+    # 'Stein Ulrike'
+    authors = ['Almut Nebel']
 
     for author in authors:
         # get the query for the API

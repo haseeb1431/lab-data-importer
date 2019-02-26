@@ -4,7 +4,7 @@ import requests
 import json
 
 
-def insertData(sqlStatement):
+def insertData(sqlStatement, dataArray):
     if sqlStatement is None:
         return False
 
@@ -18,7 +18,11 @@ def insertData(sqlStatement):
         # create a cursor
         cur = conn.cursor()
         # execute the sql statement on the server
-        cur.execute(sqlStatement)
+        if dataArray:
+            cur.execute(sqlStatement, dataArray)
+        else:
+            cur.execute(sqlStatement)
+
         # cur.executeMany(sqlStatement,data dictionary)
         conn.commit()
 

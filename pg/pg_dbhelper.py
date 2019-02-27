@@ -4,7 +4,7 @@ import requests
 import json
 
 
-def insertData(sqlStatement, dataArray):
+def insertData(sqlStatement, dataArray=None):
     if sqlStatement is None:
         return False
 

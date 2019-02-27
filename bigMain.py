@@ -115,7 +115,33 @@ if __name__ == '__main__':
     # Get all the papers from the author
     # we will use full name to avoid ambiguity among different authors
     # 'Stein Ulrike'
-    authors = ['Almut Nebel']
+    #authors = ['Almut Nebel']
+
+    authors = ['Abel Viejo Borbolla',
+            'Adam Grundhoff ',
+            'Akusjärvi, Göran',
+            'Albert Zimmermann',
+            'Allan Randrup Thomsen',
+            'Allison Groseth',
+            'André Boonstra',
+            'Andrea Kröger',
+            'Andrea Thoma-Kreß',
+            'Andrea Woltman',
+            'Andreas Moosmann',
+            'Andreas Pichlmair',
+            'Andres Merits',
+            'Andris Dišlers',
+            'Andris Zeltiņš',
+            'Andy Hoepelman',
+            'Ann C.T.M. Vossen',
+            'Anna Karlsson',
+            'Anna-Lena Spetz',
+            'Anne Wensing',
+            'Annika Karlsson',
+            'Antonio Marchini',
+            'Armin Ensser',
+            'Aspasia Ploubidou',
+            'Aya Takeoka']
 
     for author in authors:
         # get the query for the API

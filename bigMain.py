@@ -7,6 +7,8 @@ from pg import pg_dbhelper
 from time import sleep
 from dateutil import parser
 
+import azureDataPipeline
+
 def search(query):
     Entrez.email = config.ncbi_db
     handle = Entrez.esearch(db=config.ncbi_db,
@@ -116,32 +118,126 @@ if __name__ == '__main__':
     # we will use full name to avoid ambiguity among different authors
     # 'Stein Ulrike'
     #authors = ['Almut Nebel']
+    
+    #return test_method();
 
-    authors = ['Abel Viejo Borbolla',
-            'Adam Grundhoff ',
-            'Akusjärvi, Göran',
-            'Albert Zimmermann',
-            'Allan Randrup Thomsen',
-            'Allison Groseth',
-            'André Boonstra',
-            'Andrea Kröger',
-            'Andrea Thoma-Kreß',
-            'Andrea Woltman',
-            'Andreas Moosmann',
-            'Andreas Pichlmair',
-            'Andres Merits',
-            'Andris Dišlers',
-            'Andris Zeltiņš',
-            'Andy Hoepelman',
-            'Ann C.T.M. Vossen',
-            'Anna Karlsson',
-            'Anna-Lena Spetz',
-            'Anne Wensing',
-            'Annika Karlsson',
-            'Antonio Marchini',
-            'Armin Ensser',
-            'Aspasia Ploubidou',
-            'Aya Takeoka']
+    azureDataPipeline.run_pipeline()
+
+    authors = [
+         'Stephan Günther'
+        , 'César Muñoz-Fontela'
+        , 'Jonas Schmidt-Chanasit'
+        , 'Maura Dandri'
+        , 'Joachim Hauber'
+        , 'Kay Grünewald'
+        , 'Thomas Dobner'
+        , 'Marcus Altfeld'
+        , 'Wolfram Brune'
+        , 'Gülsah Gabriel'
+        , 'Adam Grundhoff'
+        , 'Linlin Zhang'
+        , 'Norbert Tautz'
+        , 'Stefan Taube'
+        , 'Susanne Herold'
+        , 'Nina Babel'
+        , 'Brigitte Biesinger-Zwosta'
+        , 'Armin Ensser'
+        , 'Thomas Gramberg'
+        , 'Andrea Thoma-Kreß'
+        , 'Michael Mach'
+        , 'Manfred Marschall'
+        , 'Frank Neipel'
+        , 'Thomas Stamminger'
+        , 'Linda Grosche'
+        , 'Barbara Walch-Rückheim'
+        , 'Susanne M. Bailer'
+        , 'Holger Jeske'
+        , 'Ralf Amann'
+        , 'Barbara Adler'
+        , 'Karl-Klaus Conzelmann'
+        , 'Ulrike Protzer'
+        , 'Volker Bruss'
+        , 'Andreas Pichlmair'
+        , 'Sabrina Schreiner'
+        , 'Martina Anton'
+        , 'Jennifer Altomonte'
+        , 'Erdem Gültekin Tamgüney'
+        , 'Ina Maja Vorberg'
+        , 'Robert Daniels'
+        , 'Anna-Lena Spetz'
+        , 'Sonia Andersson'
+        , 'Mariet C.W. Feltkamp'
+        , 'Ann C.T.M. Vossen'
+        , 'Martijn J. van Hemert'
+        , 'Montserrat Bárcena'
+        , 'Martijn J. van Hemert'
+        , 'Manuel Goncalves'
+        , 'Rob Hoeben'
+        , 'Ronald van Rij'
+        , 'Willem Melchers'
+        , 'Anne Wensing'
+        , 'Andy Hoepelman'
+        , 'Emmanuel Wiertz'
+        , 'Neeltje Kootstra'
+        , 'Monique van Oers'
+        , 'André Boonstra'
+        , 'Qiuwei Pan'
+        , 'Andrea Woltman'
+        , 'Eric C.M. van Gorp'
+        , 'Barry Rockx'
+        , 'Georges M.G.M. Verjans'
+        , 'Rob Gruters'
+        , 'Ron Fouchier'
+        , 'B.G. van den Hoogen'
+        , 'Rik L. De Swart'
+        , 'MPG Koopmans'
+        , 'Mari Kaarbø'
+        , 'Gunn Berit Olsson'
+        , 'Katharina Lahl'
+        , 'Graham Belsham'
+        , 'Thomas Bruun Rasmussen'
+        , 'Lars Erik Larsen'
+        , 'Allan Randrup Thomsen'
+        , 'Jens Bukh'
+        , 'Dorte Kinggaard Holm'
+        , 'Rasmus O. Bak'
+        , 'Steffen Junker'
+        , 'Yonglun Luo'
+        , 'Bjørn Andersen Nexø'
+        , 'Martin Roelsgaard Jakobsen'
+        , 'Christian Kanstrup Holm'
+        , 'Jens Christian Jensenius'
+        , 'Steen Vang Petersen'
+        , 'Steffen Thiel'
+        , 'Trine Mogensen'
+        , 'Søren Riis Paludan'
+        , 'Tove Christensen'
+        , 'Per Brøndsted Höllsberg'
+        , 'Mart Ustav'
+        , 'Andres Merits'
+        , 'Malin Flodström-Tullberg'
+        , 'Heikki Hyöty'
+        , 'Veijo Hukkanen'
+        , 'Tuomas Jartti'
+        , 'Ilkka Julkunen'
+        , 'Petri Susi'
+        , 'Sisko Tauriainen'
+        , 'Tytti Vuorinen'
+        , 'Vincenzo Cerullo'
+        , 'Andris Dišlers'
+        , 'Kaspars Tārs'
+        , 'Andris Zeltiņš'
+        , 'Irina Sominska'
+        , 'Louis Maes'
+        , 'Koen Augustyns'
+        , 'Kevin Ariën'
+        , 'Karl Farrow'
+        , 'Aya Takeoka'
+        , 'Xavier Saelens'
+        , 'Han Remaut'
+        , 'Pascale QUATRESOOZ'
+        , 'Danielle Perez Bercoff'
+    ]
 
     for author in authors:
         # get the query for the API
